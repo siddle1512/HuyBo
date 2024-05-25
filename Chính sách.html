@@ -1,0 +1,350 @@
+<html>
+    <head>
+        <title>Chính sách</title>
+        <!-- Box Icons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- CSS -->
+        <Style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            *{
+                font-family: "Poppins", sans-serif;
+                margin: 0;
+                padding: 0;
+                scroll-behavior: smooth;
+                scroll-padding-top: 2rem;
+                box-sizing: border-box;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            li{
+                list-style: none;
+            }
+
+            img{
+                width: 100%;
+            }
+
+            section{
+                padding: 3rem 0 2rem;
+            }
+
+            .container{
+                max-width: 1068px;
+                margin: auto;
+                width: 100%;
+            }
+            /* Home */
+            .home{
+                width: 100%;
+                min-height: 440px;
+                background: black;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .home-text-container{
+                color: white;
+                text-align: center;
+            }
+
+            .home-title{
+                font-size: 3.5rem;
+            }
+
+            .home-subtitle{
+                font-size: 1rem;
+                font-weight: 400;
+            }
+            /* Post Filter */
+            .post-filter{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 1.5rem;
+                margin-top: 2rem !important;
+            }
+
+            .filter-item{
+                font-size: 0.9rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            .active-filter{
+                background: orange ;
+                color: black;
+                padding: 4px 10px;
+                border-radius: 4px;
+            }
+            /* Posts */
+            .post{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .post-box{
+                background: white;
+                box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+                padding: 15px;
+                border-radius: 0.5rem;
+            }
+
+            .post-img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 0.5rem;
+            }
+
+            .category{
+                font-size: 0.9rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: orange;
+            }
+
+            .post-title{
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: black;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .post-date{
+                display: flex;
+                font-size: 0.875rem;
+                text-transform: uppercase;
+                font-weight: 400;
+                margin-top: 4px;
+            }
+
+            .post-description{
+                font-size: 0.9rem;
+                line-height: 1.5rem;
+                margin: 5px 0 10px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .about{
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .about .contentBx{
+                max-width: 100%;
+                width: 100%;
+                padding-right:40px;
+                text-align: justify;
+            }
+
+            .titleText{
+                font-weight: 600;
+                color: #111;
+                font-size: 2rem;  
+                text-align: center;     
+                color: orange;         
+            }
+
+            .title-text{
+                color: #111;
+                font-size: 1em;
+                            }
+
+            .ablout ,imgBx{
+                position: relative;
+                min-width: 50%;
+                width: 50%;
+                min-height: 500px;
+            }
+
+            
+          </Style>
+           <!-- boostrap -->
+ <link
+ rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+    </head>
+    <body>
+        <!-- Home -->
+        <section class="home" id="home">
+            <div class="home-text-container">
+                <h2 class="home-title"> CHÍNH SÁCH</h2>
+                <span class="home-subtitle">Đồng hành cùng bạn trên mọi hành trình</span>
+            </div>
+        </section>
+        <!-- Post Filter -->
+        <div class="post-filter container">
+            <span class="filter-item active-filter" data-filter='all'>TẤT CẢ</span>
+            <span class="filter-item" data-filter='hp'>BẢO HÀNH</span>
+            <span class="filter-item" data-filter='dell'>ĐỔI TRẢ</span>
+            <span class="filter-item" data-filter='lenovo'>BẢO MẬT</span>
+        </div>
+        <!-- Posts -->
+        <section class="post container">
+            <!-- Post Box 1 -->
+            <div class="post-box hp">
+                <img src="baohanh.jpg" alt="" class="post-img">
+                
+                <a href="#doan1" class="post-title">
+                    Chính sách bảo hành
+                </a>
+                <p class="post-description">Cung cấp chính sách sách bảo hành laptop toàn diện với cam kết chất lượng và dịch vụ tận tâm.</p>
+            </div>
+            <!-- Post Box 2 -->
+            <div class="post-box dell">
+                <img src="doitra.jpg" alt="" class="post-img">
+                
+                <a href="#doan2" class="post-title">
+                    Chính sách đổi trả
+                </a>
+                <p class="post-description">Chính sách đổi trả laptop linh hoạt và dễ dàng, đảm bảo bảo quyền lợi của khách hàng với quy trình đơn giản, minh bạch.</p>
+            </div>
+            <!-- Post Box 3 -->
+            <div class="post-box lenovo">
+                <img src="baomat.jpg" alt="" class="post-img">
+               
+                <a href="#doan3" class="post-title">
+                    Chính sách bảo mật
+                </a>
+                <p class="post-description">Chính sách bảo mật của chúng tôi cam kết bảo vệ thông tin cá nhân của khách hàng với các biện pháp bảo mật tiên tiến.</p>
+            </div>
+        </section>
+            <section class="about container" id="about">
+                <div class="contentBx">
+                    <h2 class="titleText"> Chính sách bảo hành </h2>
+                    <p class="title-text">
+                        <a name="doan1">
+                        <h3> 1. Điều kiện bảo hành</h3>
+                <B>Sản phẩm phải đáp ứng các điều kiện sau đây:</B><br>
+
+                    Sản phẩm còn trong thời hạn bảo hành. (Thời hạn bảo hành được tính từ ngày mua hàng, căn cứ theo hóa đơn bán hàng).<br>
+
+                    Sản phẩm lỗi kỹ thuật thuộc các tiêu chí được bảo hành của Nhà sản xuất/ Nhà phân phối. (tham khảo các điều kiện bảo hành của Nhà sản xuất dưới đây). Sản phẩm bị từ chối bảo hành nếu Nhà sản xuất/ Nhà phân phối xác nhận sản phẩm không đủ điều kiện bảo hành.<br>
+
+                    Số Serial/ Imei/ Service Tag trên sản phẩm phải còn nguyên vẹn và rõ nét (và phải trùng khớp với phiếu bảo hành nếu là sản phẩm có phiếu bảo hành đi kèm).<br>
+
+                    Đối với sản phẩm mua trước ngày 15/10/2022 và các sản phẩm không quản lý Serial/Imei thì phải có tem bảo hành của Phong Vũ và còn nguyên vẹn/ rõ nét.<br>
+
+                <B>Các trường hợp không bảo hành:</B><br>
+
+                    Sản phẩm không đủ điều kiện bảo hành bên trên hoặc vi phạm điều kiện bảo hành của hãng.<br>
+                    <h3> 2. Chính sách bảo hành</h3>
+                    Tất cả các sản phẩm bán ra đều được bảo hành theo quy định của nhà sản xuất.<br>
+                    Tất cả sản phẩm hư hỏng, sẽ được gửi cho nhà sản xuất hoặc đơn vị được nhà sản xuất uỷ quyền để bảo hành theo đúng chính sách bảo hành của nhà sản xuất đưa ra. Chúng tôi không chịu trách nhiệm nếu nhà sản xuất và/ hoặc đơn vị được nhà sản xuất ủy quyền từ chối bảo hành.<br>
+                    *Đối với sản phẩm điện máy, điện lạnh, hãng sẽ trực tiếp thực hiện bảo hành tại địa chỉ của Khách hàng.<br>
+                    Dữ liệu (lưu trữ trong sản phẩm: laptop/ máy tính để bàn/ Thẻ nhớ/ Ổ cứng… ) không thuộc phạm vi bảo hành. 
+                    Khách Hàng vui lòng tự sao, lưu và/ hoặc xóa dữ liệu, các phần mềm, ứng dụng, hình ảnh hoặc bất kỳ nội dung nào khác được lưu trữ trong sản phẩm ("Dữ Liệu") trước khi gửi sản phẩm để bảo hành. 
+                    Cyborg không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho khách hàng nếu Dữ Liệu lưu trong sản phẩm bị tiết lộ, bị mất, bị hư hỏng và/hoặc bị định dạng lại trong quá trình kiểm tra, xử lý bảo hành.<br>
+                    </p>
+                </div>
+            </section>
+            <center><hr color="black" width="50%"></center>
+            <section class="about container" id="about">
+                <div class="contentBx">
+                    <a name="doan2">
+                    <h2 class="titleText"> Chính sách đổi trả </h2>
+                    <p class="title-text">
+                        <h3> 1. Điều kiện đổi trả</h3>
+                <B>Sản phẩm phải đáp ứng các điều kiện sau đây:</B><br>
+
+                    Sản phẩm còn trong thời hạn dổi trả. (Thời hạn bảo hành được tính từ ngày mua hàng, căn cứ theo hóa đơn bán hàng).<br>
+
+                    Sản phẩm lỗi kỹ thuật thuộc các tiêu chí được đổi trả của Nhà sản xuất/ Nhà phân phối. (tham khảo các điều kiện bảo hành của Nhà sản xuất dưới đây). Sản phẩm bị từ chối bảo hành nếu Nhà sản xuất/ Nhà phân phối xác nhận sản phẩm không đủ điều kiện đổi trả.<br>
+
+                    Số Serial/ Imei/ Service Tag trên sản phẩm phải còn nguyên vẹn và rõ nét (và phải trùng khớp với phiếu bảo hành nếu là sản phẩm có phiếu đổi trả đi kèm).<br>
+
+                    Đối với sản phẩm mua trước ngày 15/10/2022 và các sản phẩm không quản lý Serial/Imei thì phải có tem bảo hành của Cyborg và còn nguyên vẹn/ rõ nét.<br>
+
+                <B>Các trường hợp không đổi trả:</B><br>
+
+                    Sản phẩm không đủ điều kiện bảo hành bên trên hoặc vi phạm điều kiện đổi trả của hãng.<br>
+                    <h3> 2. Chính sáchđổi trả</h3>
+                    Tất cả các sản phẩm bán ra đều được đổi trả theo quy định của nhà sản xuất.<br>
+                    Tất cả sản phẩm hư hỏng, sẽ được gửi cho nhà sản xuất hoặc đơn vị được nhà sản xuất uỷ quyền để đổi trả theo đúng chính sách đổi trả của nhà sản xuất đưa ra. Chúng tôi không chịu trách nhiệm nếu nhà sản xuất và/ hoặc đơn vị được nhà sản xuất ủy quyền từ chối đổi trả.<br>
+                    *Đối với sản phẩm điện máy, điện lạnh, hãng sẽ trực tiếp thực hiện bảo hành tại địa chỉ của Khách hàng.<br>
+                    Dữ liệu (lưu trữ trong sản phẩm: laptop/ máy tính để bàn/ Thẻ nhớ/ Ổ cứng… ) không thuộc phạm vi đổi trả. 
+                    Khách Hàng vui lòng tự sao, lưu và/ hoặc xóa dữ liệu, các phần mềm, ứng dụng, hình ảnh hoặc bất kỳ nội dung nào khác được lưu trữ trong sản phẩm ("Dữ Liệu") trước khi gửi sản phẩm để đổi trả. 
+                    Cyborg không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho khách hàng nếu Dữ Liệu lưu trong sản phẩm bị tiết lộ, bị mất, bị hư hỏng và/hoặc bị định dạng lại trong quá trình kiểm tra, xử lý đổi trả.<br>
+                    </p>
+                </div>
+            </section>
+            <center><hr color="black" width="50%"></center>
+            <section class="about container" id="about">
+                <div class="contentBx">
+                    <a name="doan3">
+                    <h2 class="titleText"> Chính sách bảo mật </h2>
+                    <p class="title-text">
+                        <p>
+                            Chính sách bảo vệ và xử lý dữ liệu cá nhân này (sau đây gọi là “Chính Sách Bảo Mật”)
+                            mô tả cách thức Công Ty xử lý và đảm bảo an toàn thông tin của các tổ chức, cá nhân (sau đây gọi là “Quý Khách”) và là một phần của các điều khoản và điều kiện tương ứng điều chỉnh mối quan hệ giữa Quý Khách và Công Ty.
+                        </p>
+                        <p>
+                            Quý Khách đã đọc, hiểu và đồng ý với Chính Sách Bảo Mật này, kể cả các phiên bản sửa đổi, bổ sung của Chính Sách Bảo Mật. 
+                            Tại từng thời điểm, Công Ty có quyền sửa đổi, bổ sung và cập nhật Chính Sách Bảo Mật. 
+                            Công Ty sẽ đăng tải Chính Sách Bảo Mật được sửa đổi, bổ sung trên sau đây được gọi chung là Website những thay đổi này có hiệu lực ngay sau khi Công Ty đăng trên các nền tảng này. 
+                            Việc Quý Khách tiếp tục truy cập, sử dụng Website, truy cập vào các nền tảng khác do Công Ty sở hữu, quản lý, vận hành, mua hàng tại Công Ty hoặc tham gia vào các chương trình khuyến mại, chương trình, sự kiện khác của Chúng tôi được hiểu là Quý Khách đồng ý với nội dung Chính Sách Bảo Mật sửa đổi, bổ sung, và cập nhật đó.
+                        </p>
+                        <h3> 1. Các thuật ngữ</h3>
+                        <B>Qúy khách</B> bao gồm<br>
+                                <p> Các bên truy cập, sử dụng các nền tảng do Công Ty sở hữu, quản lý, vận hành như Website, các ứng dụng/ website khác, các trang mạng xã hội, hội nhóm thuộc sở hữu, quản lý, vận hành bởi Công Ty (gọi chung là “Nền Tảng”)</p>
+                                <p>Khách hàng mua hàng, sử dụng dịch vụ của Công Ty;</p>
+                                <p>Cá nhân tham gia vào các chương trình khuyến mại do Công Ty tổ chức hoặc tham gia thực hiện, các cuộc khảo sát, trò chơi và các chương trình khác do Công Ty tổ chức.</p>
+                                <p><B>Dữ liệu cá nhân</B>  là thông tin dưới dạng ký hiệu, chữ viết, chữ số, hình ảnh, âm thanh hoặc dạng tương tự trên môi trường điện tử gắn liền với một con người cụ thể hoặc giúp xác định một con người cụ thể.</p>
+                                <p><B>Bên xử lý dữ liệu</B> là các tổ chức, cá nhân thực hiện việc xử lý dữ liệu thay mặt cho công ty thông qua hợp đồng hoặc thỏa thuận</p>
+                                <p><B>Xử lý dữ liệu</B> là một hoặc nhiều hoạt động tác động tới Dữ Liệu Cá Nhân, như: thu thập, ghi, phân tích, xác nhận, lưu trữ, chỉnh sửa, công khai, kết hợp, truy cập, truy xuất, thu hồi, mã hóa, giải mã, sao chép, chia sẻ, truyền đưa, cung cấp, chuyển giao, xóa, hủy dữ liệu cá nhân hoặc các hành động khác có liên quan</p>
+                        <h3> 2. Loại dữ liệu cá nhân được xử lý</h3>
+                        <p>Để triển khai cung cấp trải nghiệm, hàng hóa, dịch vụ và/hoặc tư vấn, giải đáp các yêu cầu của Quý Khách, 
+                            Công Ty và Bên Xử Lý Dữ Liệu của chúng tôi thực hiện một số hoạt động Xử Lý Dữ Liệu của Quý Khách và hoặc có liên quan đến Quý Khách hoặc giao dịch mà Quý Khách thực hiện với chúng tôi. 
+                            Theo đó, Phong Vũ và/hoặc Bên Xử Lý Dữ Liệu của chúng tôi có thể xử lý các loại Dữ Liệu Cá Nhân bao gồm cả những dữ liệu cá nhân nhạy cảm được quy định dưới đây của Quý Khách, bên thứ ba mà Quý Khách cung cấp cho Chúng Tôi:</p>
+                        <p>Họ, chữ đệm và tên khai sinh, tên gọi khác (nếu có); Ngày, tháng, năm sinh; Giới tính; Địa chỉ; Quốc tịch; Hình ảnh cá nhân; Số điện thoại; thông tin về giấy tờ tùy than; mã số thuế cá nhân, Tình trạng hôn nhân; Mối quan hệ gia đình (cha mẹ, con cái); Thông tin về tài khoản số của cá nhân; 
+                            dữ liệu cá nhân phản ánh hoạt động, lịch sử hoạt động trên không gian mạng, chi tiết việc truy cập vào website Cyborg.vn, các nền tảng, ứng dụng khác mà Cyborg sử dụng, quản lý, dữ liệu được tạo ra từ hành vi, hoạt động của Quý Khách được thực hiện trên các nền tảng kỹ thuật và các Dữ Liệu Cá Nhân cơ bản khác.</p>
+                        <p>Các Dữ liệu cá nhân nhạy cảm như quan điểm tôn giáo; Tình trạng sức khỏe, đời tư không bao gồm nhóm máu; 
+                            Thông tin về đặc điểm di truyền được thừa hưởng hoặc có được của cá nhân; thuộc tính vật lý, đặc điểm sinh học riêng; dữ liệu về tội phạm, hành vi phạm tội được thu thập, lưu trữ bởi các cơ quan thực thi pháp luật; 
+                            Thông tin khách hàng của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức cung ứng dịch vụ trung gian thanh toán, các tổ chức được phép khác, 
+                            gồm: thông tin định danh Quý Khách theo quy định của pháp luật, thông tin về tài khoản, thông tin về giao dịch, thông tin về tổ chức, cá nhân là bên bảo đảm tại tổ chức tín dụng, chi nhánh ngân hàng, tổ chức cung ứng dịch vụ trung gian thanh toán; Dữ liệu về vị trí của cá nhân được xác định qua dịch vụ định vị; và Dữ liệu cá nhân khác được pháp luật quy định là đặc thù, cần có biện pháp bảo mật cần thiết.</p>
+                </div>
+            </section>
+             <!-- JS -->
+        <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+              <script>
+                  //Filter Js
+                  $(document).ready(function(){
+                      $(".filter-item").click(function(){
+                          const value = $(this).attr("data-filter");
+                          if (value == "all") {
+                              $(".post-box").show("1000");
+                          }
+                          else{
+                              $(".post-box").not("." + value).hide("1000");
+                              $(".post-box").filter("." + value).show("1000");
+                          }
+                      });
+                      //Add active to btn
+                  $(".filter-item").click(function () {
+                      $(this).addClass("active-filter").siblings().removeClass("active-filter");
+                  });
+                  });
+                  
+              </script>
+          </body>
+      </html>

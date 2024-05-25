@@ -1,0 +1,497 @@
+<html>
+
+<head>
+  <title>Tin Tức Công Nghệ</title>
+  <!-- Box Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- CSS -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      scroll-padding-top: 2rem;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    sectionn {
+      padding: 3rem 0 2rem;
+    }
+
+    .container {
+      max-width: 1068px;
+      margin: auto;
+      width: 100%;
+    }
+
+    /* Home */
+    .home {
+      width: 100%;
+      min-height: 440px;
+      background: black;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home-text-container {
+      color: white;
+      text-align: center;
+    }
+
+    .home-title {
+      font-size: 3.5rem;
+    }
+
+    .home-subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Post Filter */
+    .post-filter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 1.5rem;
+      margin-top: 2rem !important;
+    }
+
+    .filter-item {
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .active-filter {
+      background: orange;
+      color: black;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* Posts */
+    .post {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .post-box {
+      background: white;
+      box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+      padding: 15px;
+      border-radius: 0.5rem;
+    }
+
+    .post-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.5rem;
+    }
+
+    .category {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: orange;
+    }
+
+    .post-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: black;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .post-date {
+      display: flex;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    .post-description {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      margin: 5px 0 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+
+  <!-- Load font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous" />
+
+  <!-- owl carousel libraries -->
+  <link rel="stylesheet" href="js/owlcarousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="js/owlcarousel/owl.theme.default.min.css" />
+  <script src="js/Jquery/Jquery.min.js"></script>
+  <script src="js/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- tidio - live chat -->
+  <!-- <script src="//code.tidio.co/bfiiplaaohclhqwes5xivoizqkq56guu.js"></script> -->
+  <!-- our files -->
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/topnav.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/banner.css" />
+  <link rel="stylesheet" href="css/taikhoan.css" />
+  <link rel="stylesheet" href="css/trangchu.css" />
+  <link rel="stylesheet" href="css/home_products.css" />
+  <link rel="stylesheet" href="css/pagination_phantrang.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- js -->
+  <script src="js/dungchung.js"></script>
+
+  <!-- boostrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <script>
+    addTopNav();
+  </script>
+
+  <!-- Home -->
+  <sectionn class="home" id="home">
+    <div class="home-text-container">
+      <h2 class="home-title">TIN TỨC</h2>
+      <span class="home-subtitle">Cập nhật tin tức mới mỗi ngày</span>
+    </div>
+  </sectionn>
+  <!-- Post Filter -->
+  <div class="post-filter container">
+    <span class="filter-item active-filter" data-filter="all">All</span>
+    <span class="filter-item" data-filter="mac">MacBook</span>
+    <span class="filter-item" data-filter="asus">Asus</span>
+    <span class="filter-item" data-filter="lenovo">Lenovo</span>
+    <span class="filter-item" data-filter="acer">Acer</span>
+    <span class="filter-item" data-filter="dell">Dell</span>
+    <span class="filter-item" data-filter="msi">MSI</span>
+  </div>
+  <!-- Posts -->
+  <sectionn class="post container">
+    <!-- Post Box 1 -->
+    <div class="post-box mac">
+      <img src="img/post1.jpg" alt="" class="post-img" />
+      <h2 class="category">MacBook</h2>
+      <a href="https://vnexpress.net/macbook-man-hinh-gap-co-the-ra-mat-nam-toi-4742795.html" class="post-title">
+        MacBook màn hình gập có thể ra mắt năm tới
+      </a>
+      <span class="post-date">07/05/2024</span>
+      <p class="post-description">
+        Apple được cho là sẽ giới thiệu mẫu thiết bị có màn hình gập đầu tiên
+        trong năm 2025, dự kiến là MacBook, tiếp đến là iPhone gập năm 2026.
+      </p>
+    </div>
+    <!-- Post Box 2 -->
+    <div class="post-box dell">
+      <img src="img/post2.png" alt="" class="post-img" />
+      <h2 class="category">Dell</h2>
+      <a href="https://vnexpress.net/bo-ba-laptop-dell-mong-nhe-va-hieu-nang-cho-doanh-nhan-3894687.html"
+        class="post-title">
+        Bộ ba laptop Dell mỏng nhẹ và hiệu năng cho doanh nhân
+      </a>
+      <span class="post-date">22/03/2019</span>
+      <p class="post-description">
+        Dell XPS nhắm đến khách hàng doanh nhân, thương gia, với điểm nhấn ở
+        hiệu năng mạnh và thiết kế mỏng, nhẹ.
+      </p>
+    </div>
+    <!-- Post Box 3 -->
+    <div class="post-box lenovo">
+      <img src="img/post3.jpg" alt="" class="post-img" />
+      <h2 class="category">Lenovo</h2>
+      <a href="https://vnexpress.net/ba-mau-laptop-lenovo-mong-nhe-cho-gioi-van-phong-4457572.html" class="post-title">
+        Ba mẫu laptop Lenovo mỏng nhẹ cho giới văn phòng
+      </a>
+      <span class="post-date">29/04/2022</span>
+      <p class="post-description">
+        Lenovo có nhiều mẫu laptop với cấu hình cao, thiết kế mỏng nhẹ, thuận
+        tiện cho việc di chuyển.
+      </p>
+    </div>
+    <!-- Post Box 4 -->
+    <div class="post-box mac">
+      <img src="img/post4.jpg" alt="" class="post-img" />
+      <h2 class="category">MacBook</h2>
+      <a href="https://vnexpress.net/macbook-dung-chip-m3-max-quai-vat-cau-hinh-4696634.html" class="post-title">
+        MacBook dùng chip M3 Max - 'quái vật cấu hình'
+      </a>
+      <span class="post-date">08/01/2024</span>
+      <p class="post-description">
+        Chip 3 nm giúp MacBook Pro 16 inch hỗ trợ công nghệ raytracing, chơi
+        tốt một số game AAA và xử lý tác vụ AI nhanh hơn.
+      </p>
+    </div>
+    <!-- Post Box 5 -->
+    <div class="post-box lenovo">
+      <img src="img/post5.jpg" alt="" class="post-img" />
+      <h2 class="category">Lenovo</h2>
+      <a href="https://vnexpress.net/loat-laptop-lenovo-ideapad-huong-den-nguoi-dung-tre-4160538.html"
+        class="post-title">
+        Loạt laptop Lenovo IdeaPad hướng đến người dùng trẻ
+      </a>
+      <span class="post-date">11/09/2020</span>
+      <p class="post-description">
+        Với mức giá từ 9,89 triệu đồng, mẫu mã thời trang, đáp ứng tốt mọi tác
+        vụ hàng ngày, bộ ba Lenovo IdeaPad phù hợp với người dùng trẻ, hiện
+        đại.
+      </p>
+    </div>
+    <!-- Post Box 6 -->
+    <div class="post-box mac">
+      <img src="img/post6.jpg" alt="" class="post-img" />
+      <h2 class="category">MacBook</h2>
+      <a href="https://vnexpress.net/apple-khai-tu-macbook-pro-13-voi-touch-bar-4671448.html" class="post-title">
+        Apple khai tử MacBook Pro 13 với Touch Bar
+      </a>
+      <span class="post-date">01/11/2023</span>
+      <p class="post-description">
+        Sau khi ra mắt MacBook Pro 14 inch với chip M3 mới, Apple cũng chính
+        thức ngừng sản xuất dòng MacBook với màn hình Touch Bar sau 7 năm.
+      </p>
+    </div>
+    <!-- Post Box 7 -->
+    <div class="post-box lenovo">
+      <img src="img/post7.png" alt="" class="post-img" />
+      <h2 class="category">Lenovo</h2>
+      <a href="https://vnexpress.net/lenovo-ra-mat-hai-dong-laptop-thinkpad-tich-hop-ai-4699676.html"
+        class="post-title">
+        Lenovo ra mắt hai dòng laptop ThinkPad tích hợp AI
+      </a>
+      <span class="post-date">17/01/2024</span>
+      <p class="post-description">
+        Laptop ThinkPad X1 Carbon Gen 12 và ThinkPad X1 2-trong-1 Gen 9 trang
+        bị bộ vi xử lý Intel Core Ultra mới nhất cùng Windows 11, tăng tốc tác
+        vụ qua AI.
+      </p>
+    </div>
+    <!-- Post Box 8 -->
+    <div class="post-box dell">
+      <img src="img/post8.png" alt="" class="post-img" />
+      <h2 class="category">Dell</h2>
+      <a href="https://vnexpress.net/laptop-dell-inspiron-3158-thiet-ke-xoay-360-do-3375303.html" class="post-title">
+        Laptop Dell Inspiron 3158 thiết kế xoay 360 độ
+      </a>
+      <span class="post-date">25/03/2016</span>
+      <p class="post-description">
+        Dòng laptop 11,6 inch Dell Inspiron 3158 thuộc Dell 11 3.000 series,
+        chạy Windows 10 bản quyền có trọng lượng chỉ 1,36kg. Máy sở hữu thiết
+        kế màn hình có thể gấp ngược 360 độ, biến laptop thành chiếc tablet
+        trong tích tắc.
+      </p>
+    </div>
+    <!-- Post Box 9 -->
+    <div class="post-box dell">
+      <img src="img/post9.png" alt="" class="post-img" />
+      <h2 class="category">Dell</h2>
+      <a href="https://vnexpress.net/laptop-dell-vostro-5459-cho-gioi-tre-nang-dong-3375390.html" class="post-title">
+        Laptop Dell Vostro 5459 cho giới trẻ năng động
+      </a>
+      <span class="post-date">25/03/2016</span>
+      <p class="post-description">
+        Vostro 5459 sở hữu cấu hình mạnh đi cùng thiết kế bắt mắt nhờ vỏ ngoài
+        màu Gold và chất liệu kim loại.
+      </p>
+    </div>
+    <!-- Post Box 10 -->
+    <div class="post-box asus">
+      <img src="img/post10.jpg" alt="" class="post-img" />
+      <h2 class="category">Asus</h2>
+      <a href="https://vnexpress.net/laptop-asus-zenbook-14-oled-nang-cap-chip-ai-4715466.html" class="post-title">
+        Laptop Asus Zenbook 14 OLED nâng cấp chip AI
+      </a>
+      <span class="post-date">27/02/2024</span>
+      <p class="post-description">
+        Dòng laptop cao cấp di động có bộ xử lý Intel Core Ultra 9 mới tích
+        hợp AI, chế tác kim loại mỏng, hiệu năng mạnh mẽ và màn hình Lumina
+        OLED.
+      </p>
+    </div>
+    <!-- Post Box 11 -->
+    <div class="post-box acer">
+      <img src="img/post11.png" alt="" class="post-img" />
+      <h2 class="category">Acer</h2>
+      <a href="https://vnexpress.net/swift-go-14-laptop-tich-hop-ai-tu-acer-4736092.html" class="post-title">
+        Swift Go 14 - laptop tích hợp AI từ Acer
+      </a>
+      <span class="post-date">19/04/2024</span>
+      <p class="post-description">
+        Acer ra mắt mẫu laptop mới Swift Go 14 (SFG14-73) với vi xử lý tích
+        hợp AI, tăng hiệu suất máy, trọng lượng 1,3 kg.
+      </p>
+    </div>
+    <!-- Post Box 12 -->
+    <div class="post-box msi">
+      <img src="img/post12.jpg" alt="" class="post-img" />
+      <h2 class="category">Msi</h2>
+      <a href="https://vnexpress.net/msi-titan-18-hx-laptop-150-trieu-dong-co-touchpad-phat-sang-4704334.html"
+        class="post-title">
+        MSI Titan 18 HX - laptop 150 triệu đồng có touchpad phát sáng
+      </a>
+      <span class="post-date">24/04/2024</span>
+      <p class="post-description">
+        MSI Titan 18 HX có tùy chọn cấu hình mạnh nhất hiện nay với chip Intel
+        Core Ultra mới, touchpad hiển thị đèn LED RGB và bàn phím cơ
+        SteelSeries.
+      </p>
+    </div>
+    <!-- Post Box 13 -->
+    <div class="post-box asus">
+      <img src="img/post13.png" alt="" class="post-img" />
+      <h2 class="category">Asus</h2>
+      <a href="https://vnexpress.net/expertbook-b9-oled-laptop-cho-doanh-nhan-mong-nhe-nhat-cua-asus-4726473.html"
+        class="post-title">
+        ExpertBook B9 OLED - laptop cho doanh nhân mỏng nhẹ nhất của Asus
+      </a>
+      <span class="post-date">29/03/2024</span>
+      <p class="post-description">
+        Mẫu ExpertBook B9 OLED (B9403CVA) có cân nặng chỉ 990 gram cùng màn
+        hình 14 inch, cấu hình dùng chip Core i7-1355U, giá 55,99 triệu đồng
+        cho bản RAM 32 GB.
+      </p>
+    </div>
+    <!-- Post Box 14 -->
+    <div class="post-box msi">
+      <img src="img/post14.png" alt="" class="post-img" />
+      <h2 class="category">MSI</h2>
+      <a href="https://vnexpress.net/loat-laptop-lenovo-ideapad-huong-den-nguoi-dung-tre-4160538.html"
+        class="post-title">
+        Laptop gaming phiên bản Mercedes của MSI
+      </a>
+      <span class="post-date">01/06/2023</span>
+      <p class="post-description">
+        MSI Stealth 16 lấy cảm hứng thiết kế từ mẫu xe đua Mercedes-AMG GT2,
+        được trang bị cấu hình mạnh và số lượng bán ra giới hạn.
+      </p>
+    </div>
+    <!-- Post Box 15 -->
+    <div class="post-box asus">
+      <img src="img/post15.jpg" alt="" class="post-img" />
+      <h2 class="category">Asus</h2>
+      <a href="https://vnexpress.net/rog-nebula-oled-cong-nghe-man-hinh-gaming-cao-cap-nhat-cua-asus-4719496.html"
+        class="post-title">
+        ROG Nebula OLED - công nghệ màn hình gaming cao cấp nhất của Asus
+      </a>
+      <span class="post-date">20/03/2024</span>
+      <p class="post-description">
+        Công nghệ ROG Nebula OLED giúp màn hình tối ưu các thông số: thời gian
+        phản hồi, độ phân giải, tần số làm mới, tỷ lệ tương phản... mà không
+        cần điều chỉnh thủ công.
+      </p>
+    </div>
+    <!-- Post Box 16 -->
+    <div class="post-box msi">
+      <img src="img/post16.jpg" alt="" class="post-img" />
+      <h2 class="category">MSI</h2>
+      <a href="https://vnexpress.net/msi-stealth-16-mercedes-amg-tang-trai-nghiem-gaming-cho-nguoi-dung-4651325.html"
+        class="post-title">
+        MSI Stealth 16 Mercedes-AMG tăng trải nghiệm gaming cho người dùng
+      </a>
+      <span class="post-date">10/09/2023</span>
+      <p class="post-description">
+        Stealth 16 Mercedes-AMG Motorsport, mẫu latop gaming do MSI hợp tác
+        cùng Mercedes có thiết kế sang trọng và hiệu năng mạnh mẽ.
+      </p>
+    </div>
+    <!-- Post Box 17 -->
+    <div class="post-box acer">
+      <img src="img/post17.png" alt="" class="post-img" />
+      <h2 class="category">Acer</h2>
+      <a href="https://vnexpress.net/acer-aspire-vero-15-lam-tu-vat-lieu-tai-che-4626454.html" class="post-title">
+        Acer Aspire Vero 15 làm từ vật liệu tái chế
+      </a>
+      <span class="post-date">07/07/2023</span>
+      <p class="post-description">
+        Bộ khung, thân, bàn phím và vỏ máy sử dụng 90% nhựa PCR tái chế, riêng
+        vỏ hộp làm từ giấy.
+      </p>
+    </div>
+    <!-- Post Box 18 -->
+    <div class="post-box acer">
+      <img src="img/post18.png" alt="" class="post-img" />
+      <h2 class="category">Acer</h2>
+      <a href="https://vnexpress.net/laptop-acer-gaming-aspire-danh-cho-hoc-sinh-sinh-vien-4665428.html"
+        class="post-title">
+        Laptop Acer Gaming Aspire dành cho học sinh, sinh viên
+      </a>
+      <span class="post-date">20/10/2023</span>
+      <p class="post-description">
+        Dòng laptop gaming phổ thông mới nhất của Acer dành cho học sinh, sinh
+        viên hay người đi làm, sở hữu cấu hình mạnh, trong tầm giá 20 triệu
+        đồng.
+      </p>
+    </div>
+  </sectionn>
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script>
+    //Filter Js
+    $(document).ready(function () {
+      $(".filter-item").click(function () {
+        const value = $(this).attr("data-filter");
+        if (value == "all") {
+          $(".post-box").show("1000");
+        } else {
+          $(".post-box")
+            .not("." + value)
+            .hide("1000");
+          $(".post-box")
+            .filter("." + value)
+            .show("1000");
+        }
+      });
+      //Add active to btn
+      $(".filter-item").click(function () {
+        $(this)
+          .addClass("active-filter")
+          .siblings()
+          .removeClass("active-filter");
+      });
+    });
+  </script>
+
+  <script>
+    addContainTaiKhoan();
+    addPlc();
+  </script>
+  <div class="footer">
+    <script>
+      addFooter();
+    </script>
+  </div>
+  <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+</body>
+
+</html>
